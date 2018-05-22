@@ -10,28 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var movie_service_1 = require("../../services/movie.service");
-var TopMoviePageComponent = (function () {
-    function TopMoviePageComponent(movieService) {
-        this.movieService = movieService;
+var tvshow_service_1 = require("../../../services/tvshow.service");
+var TopTvShowPageComponent = (function () {
+    function TopTvShowPageComponent(TvShowService) {
+        this.TvShowService = TvShowService;
     }
-    /* currentPage = 1;
-     maxPages = 0;*/
-    TopMoviePageComponent.prototype.ngOnInit = function () {
+    TopTvShowPageComponent.prototype.ngOnInit = function () {
         this.getResults();
     };
-    TopMoviePageComponent.prototype.getResults = function () {
-        /*this.movies = this.movieService.getTopMovies({ page: this.currentPage });
-        //this.movies.subscribe(r => this.maxPages = r.total_pages);*/
+    TopTvShowPageComponent.prototype.getResults = function () {
     };
-    return TopMoviePageComponent;
+    return TopTvShowPageComponent;
 }());
-TopMoviePageComponent = __decorate([
+TopTvShowPageComponent = __decorate([
     core_1.Component({
-        selector: "topmovie-page",
-        templateUrl: "./topmovie-page.component.html"
+        selector: "toptvshow-page",
+        templateUrl: "./toptvshow-page.component.html"
     }),
-    __metadata("design:paramtypes", [movie_service_1.MovieService])
-], TopMoviePageComponent);
-exports.TopMoviePageComponent = TopMoviePageComponent;
-//# sourceMappingURL=topmovie-page.component.js.map
+    __metadata("design:paramtypes", [tvshow_service_1.TvShowService])
+], TopTvShowPageComponent);
+exports.TopTvShowPageComponent = TopTvShowPageComponent;
+//# sourceMappingURL=toptvshow-page.component.js.map

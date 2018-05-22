@@ -10,28 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var _ = require("lodash");
-var AppComponent = (function () {
-    function AppComponent(router) {
-        this.router = router;
-        this.title = "Filmvilág";
-        this.isNavbarCollapsed = true;
+var movie_service_1 = require("../../../services/movie.service");
+var TopMoviePageComponent = (function () {
+    function TopMoviePageComponent(movieService) {
+        this.movieService = movieService;
+        this.currentPage = 1;
+        this.maxPages = 0;
     }
-    AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.currentPageTitle = this.router.events
-            .filter(function (e) { return e instanceof router_1.NavigationEnd; })
-            .map((function () { return _.find(["Search", "TopMovies", "TopTvShows"], function (t) { return _this.router.isActive('/' + t.toLowerCase(), false); }); }).bind(this));
+    TopMoviePageComponent.prototype.ngOnInit = function () {
+        this.getResults();
     };
-    return AppComponent;
+    TopMoviePageComponent.prototype.getResults = function () {
+        /* this.movies = this.movieService.getTopMovies();
+         this.movies.subscribe(r => this.maxPages);*/
+    };
+    return TopMoviePageComponent;
 }());
-AppComponent = __decorate([
+TopMoviePageComponent = __decorate([
     core_1.Component({
-        selector: 'app',
-        templateUrl: './app.component.html'
+        selector: "topmovie-page",
+        templateUrl: "./topmovie-page.component.html"
     }),
-    __metadata("design:paramtypes", [router_1.Router])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+    __metadata("design:paramtypes", [movie_service_1.MovieService])
+], TopMoviePageComponent);
+exports.TopMoviePageComponent = TopMoviePageComponent;
+//# sourceMappingURL=topmovie-page.component.js.map

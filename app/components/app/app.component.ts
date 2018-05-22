@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.currentPageTitle = this.router.events
             .filter(e => e instanceof NavigationEnd)
-            .map((() => _.find(["search", "topmovies", "toptvshows"], t => this.router.isActive('/' + t.toLowerCase(), false))).bind(this))
+            //strings here are the actual text that appear on the top of the sites
+            .map((() => _.find(["Search", "TopMovies", "TopTvShows"], t => this.router.isActive('/' + t.toLowerCase(), false))).bind(this))
     }
     
     title = "Filmvilág";

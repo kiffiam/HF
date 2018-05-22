@@ -11,15 +11,13 @@ export class PersonService {
 
     private persons: Person[];
     constructor() {
-        this.load();
+    
     }
 
     getPerson(): any {
             throw new Error("Method not implemented.");
     }
     
-    private load(){
 
-    }
 
 }

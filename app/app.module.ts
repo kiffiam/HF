@@ -6,14 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CollapseModule } from 'ng2-bootstrap'
 import { AppComponent } from "./components/app/app.component";
 
-import { HttpModule } from '@angular/http';
+//import { HttpModule } from '@angular/http';
 
-import { MoviePageComponent } from './components/movie-page/movie-page.component';
-import { TvShowPageComponent } from './components/tvshow-page/tvshow-page.component';
+import { MoviePageComponent } from './components/movies/movie-page/movie-page.component';
+import { TvShowPageComponent } from './components/tvshows/tvshow-page/tvshow-page.component';
 import { SearchPageComponent } from './components/search-page/search-page.component';
 
-import { TopMoviePageComponent } from './components/topmovie-page/topmovie-page.component';
-import { TopTvShowPageComponent } from './components/toptvshow-page/toptvshow-page.component';
+import { TopMoviePageComponent } from './components/movies/topmovie-page/topmovie-page.component';
+import { TopTvShowPageComponent } from './components/tvshows/toptvshow-page/toptvshow-page.component';
 
 import { TvShowService } from './services/tvshow.service';
 import { MovieService } from './services/movie.service';
@@ -32,7 +32,7 @@ let routes: Route[] = [
     RouterModule.forRoot(routes),
     FormsModule,
     //HttpClientModule,
-    HttpModule,
+    //HttpModule,
     CollapseModule.forRoot()],
   declarations: [
     AppComponent,

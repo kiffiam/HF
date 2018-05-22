@@ -13,10 +13,9 @@ var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
 var ng2_bootstrap_1 = require("ng2-bootstrap");
 var app_component_1 = require("./components/app/app.component");
-var http_1 = require("@angular/http");
 var search_page_component_1 = require("./components/search-page/search-page.component");
-var topmovie_page_component_1 = require("./components/topmovie-page/topmovie-page.component");
-var toptvshow_page_component_1 = require("./components/toptvshow-page/toptvshow-page.component");
+var topmovie_page_component_1 = require("./components/movies/topmovie-page/topmovie-page.component");
+var toptvshow_page_component_1 = require("./components/tvshows/toptvshow-page/toptvshow-page.component");
 var tvshow_service_1 = require("./services/tvshow.service");
 var movie_service_1 = require("./services/movie.service");
 var routes = [
@@ -35,7 +34,7 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(routes),
             forms_1.FormsModule,
             //HttpClientModule,
-            http_1.HttpModule,
+            //HttpModule,
             ng2_bootstrap_1.CollapseModule.forRoot()],
         declarations: [
             app_component_1.AppComponent,

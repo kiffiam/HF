@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { Movie } from "../../models/movie.type";
-import { SearchResult } from "../../models/search-result.type";
-import { MovieService } from "../../services/movie.service";
+import { Movie } from "../../../models/movie.type";
+import { SearchResult } from "../../../models/search-result.type";
+import { MovieService } from "../../../services/movie.service";
 
 @Component({
     selector: "movie-page",

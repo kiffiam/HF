@@ -1,8 +1,7 @@
-<div class="col-lg-5 panel panel-info">
+<div class="col-lg-10 panel panel-info">
     <div class="panel-body">
-        <input class="form-control" placeholder="Filter Top Movies..." >
-        <!-- Here comes the list of Top movies. -->
-        <div class="TopMovies-list">
+        <input class="form-control" placeholder="Search" >
+        <div class="Search-list">
             <a *ngFor="let TopMovie of (TopMovies | async)?.results"
                 [class.active]="TopMovie === selectedTopMovie" (click)="selectedTopMovie = TopMovie">
                 <h6 class="text-info">{{TopMovie.title}}</h6>

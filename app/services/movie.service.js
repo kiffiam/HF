@@ -12,7 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var MovieService = (function () {
     function MovieService() {
-        this.baseUrl = "https://api.themoviedb.org/3";
+        this.url = 'https://api.themoviedb.org/3/';
+        this.apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4';
     }
     MovieService.prototype.getMovies = function () {
         throw new Error("Method not implemented.");
