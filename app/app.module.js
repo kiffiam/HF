@@ -23,6 +23,7 @@ var search_movie_component_1 = require("./components/search/search-movie/search-
 var search_tvshow_component_1 = require("./components/search/search-tvshow/search-tvshow.component");
 var topmovie_page_component_1 = require("./components/movies/topmovie-page/topmovie-page.component");
 var toptvshow_page_component_1 = require("./components/tvshows/toptvshow-page/toptvshow-page.component");
+var person_page_component_1 = require("./components/person-page/person-page.component");
 var tvshow_service_1 = require("./services/tvshow.service");
 var movie_service_1 = require("./services/movie.service");
 var person_service_1 = require("./services/person.service");
@@ -33,7 +34,8 @@ var routes = [
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
     { path: "toptvshows", component: toptvshow_page_component_1.TopTvShowPageComponent },
     { path: "movie/:id", component: movie_page_component_1.MoviePageComponent },
-    { path: "tvshow/:id", component: tvshow_page_component_1.TvShowPageComponent }
+    { path: "tvshow/:id", component: tvshow_page_component_1.TvShowPageComponent },
+    { path: "person/:id", component: person_page_component_1.PersonPageComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -60,7 +62,8 @@ AppModule = __decorate([
             tvshow_page_component_1.TvShowPageComponent,
             paging_component_1.PagingComponent,
             search_movie_component_1.SearchMovieComponent,
-            search_tvshow_component_1.SearchTvShowComponent
+            search_tvshow_component_1.SearchTvShowComponent,
+            person_page_component_1.PersonPageComponent
         ],
         exports: [],
         providers: [

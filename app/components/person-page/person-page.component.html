@@ -1,0 +1,12 @@
+<div class="col-lg-10 panel panel-info">
+        <div class="panel-body details">
+            <img *ngIf="person.poster_path" src="https://image.tmdb.org/t/p/w185{{person.poster_path}}" alt="{{person.title}}">
+            <img *ngIf="!person.poster_path" src="http://via.placeholder.com/185x250" alt="Placeholder">
+            <a>
+                <h3>{{person.name}}</h3>
+            </a>
+            
+    
+            <div style="clear:both"></div>
+        </div>
+    </div>

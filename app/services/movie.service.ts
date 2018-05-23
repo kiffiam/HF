@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/rx";
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Movie } from "../models/movie.type";
+import { Movie, MovieCredits } from "../models/movie.type";
 import * as _ from "lodash";
 import { SearchResult } from "../models/search-result.type";
 
@@ -16,18 +16,19 @@ export class MovieService {
 
     private movies: Movie[];
 
-    getMovies(): any {
-        throw new Error("Method not implemented.");
-    }
-
     getMovie(id: number): Observable<Movie> {
         let url = this.url + "/movie/" + id + this.apikey;
         return this.http.get<Movie>(url);
     }
 
     getTopMovies(): Observable<SearchResult<Movie>> {
-        let url = this.url +"/movie/top_rated" + this.apikey;
+        let url = this.url + "/movie/top_rated" + this.apikey;
         return this.http.get<SearchResult<Movie>>(url);
+    }
+
+    getMovieCredits(id: number): Observable<MovieCredits> {
+        let url = this.url + "/movie/" + id + "/credits" + this.apikey;
+        return this.http.get<MovieCredits>(url);
     }
 
 

@@ -3,7 +3,7 @@ import { Observable } from "rxjs/rx";
 import { Tvshow } from "../models/tvshow.type";
 import * as _ from "lodash";
 import { SearchResult } from "../models/search-result.type";
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class TvShowService {

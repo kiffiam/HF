@@ -20,6 +20,14 @@
         <h6 *ngIf="movie.adult === true">
             Adult: yes
         </h6>
+        <div class="row" *ngIf="movieCredits">
+        <h4>Cast:</h4>
+        <ul class="list-unstyled">
+            <li *ngFor="let person of (movieCredits.cast | slice:0:6)">
+                <a routerLink="/person/{{person.id}}">{{person.name}}</a>
+            </li>
+        </ul>
+        </div>
 
         <div style="clear:both"></div>
     </div>
