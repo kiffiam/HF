@@ -22,7 +22,9 @@ var tvshow_item_component_1 = require("./components/tvshows/tvshow-item/tvshow-i
 var search_movie_component_1 = require("./components/search/search-movie/search-movie.component");
 var search_tvshow_component_1 = require("./components/search/search-tvshow/search-tvshow.component");
 var topmovie_page_component_1 = require("./components/movies/topmovie-page/topmovie-page.component");
+var popularmovie_page_component_1 = require("./components/movies/popularmovie-page/popularmovie-page.component");
 var toptvshow_page_component_1 = require("./components/tvshows/toptvshow-page/toptvshow-page.component");
+var populartvshow_page_component_1 = require("./components/tvshows/populartvshow-page/populartvshow-page-component");
 var person_page_component_1 = require("./components/person-page/person-page.component");
 var tvshow_service_1 = require("./services/tvshow.service");
 var movie_service_1 = require("./services/movie.service");
@@ -32,7 +34,9 @@ var routes = [
     { path: "searchmovie", component: search_movie_component_1.SearchMovieComponent },
     { path: "searchtvshow", component: search_tvshow_component_1.SearchTvShowComponent },
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
+    { path: "popularmovies", component: popularmovie_page_component_1.PopularMoviePageComponent },
     { path: "toptvshows", component: toptvshow_page_component_1.TopTvShowPageComponent },
+    { path: "populartvshows", component: populartvshow_page_component_1.PopularTvShowPageComponent },
     { path: "movie/:id", component: movie_page_component_1.MoviePageComponent },
     { path: "tvshow/:id", component: tvshow_page_component_1.TvShowPageComponent },
     { path: "person/:id", component: person_page_component_1.PersonPageComponent }
@@ -55,9 +59,11 @@ AppModule = __decorate([
         declarations: [
             app_component_1.AppComponent,
             topmovie_page_component_1.TopMoviePageComponent,
+            popularmovie_page_component_1.PopularMoviePageComponent,
             movie_page_component_1.MoviePageComponent,
             movie_item_component_1.MovieItemComponent,
             toptvshow_page_component_1.TopTvShowPageComponent,
+            populartvshow_page_component_1.PopularTvShowPageComponent,
             tvshow_item_component_1.TvShowItemComponent,
             tvshow_page_component_1.TvShowPageComponent,
             paging_component_1.PagingComponent,

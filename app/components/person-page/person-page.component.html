@@ -1,12 +1,16 @@
-<div class="col-lg-10 panel panel-info">
-        <div class="panel-body details">
-            <img *ngIf="person.poster_path" src="https://image.tmdb.org/t/p/w185{{person.poster_path}}" alt="{{person.title}}">
-            <img *ngIf="!person.poster_path" src="http://via.placeholder.com/185x250" alt="Placeholder">
-            <a>
-                <h3>{{person.name}}</h3>
-            </a>
-            
-    
-            <div style="clear:both"></div>
-        </div>
+<div class="col-lg-12 panel panel-info">
+    <div class="panel-body details">
+            <img *ngIf="person.profile_path" src="https://image.tmdb.org/t/p/w185{{person.profile_path}}" alt="{{person.title}}">
+            <img *ngIf="!person.profile_path" src="http://via.placeholder.com/185x250" alt="Placeholder">
+        <a>
+            <h3>{{person.name}}</h3>
+        </a>
+            <h4>Born on: {{person.birthday}}, in {{person.place_of_birth}}</h4>
+            <h5 *ngIf="person.deathday !== null">
+                Died on: {{person.deathday}}
+            </h5>
+        <p>{{person.biography}}</p>
+        
+        <div style="clear:both"></div>
     </div>
+</div>

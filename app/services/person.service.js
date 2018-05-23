@@ -18,7 +18,7 @@ var PersonService = (function () {
         this.apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4';
     }
     PersonService.prototype.getPerson = function (id) {
-        var url = this.url + "/person/id" + this.apikey;
+        var url = this.url + "/person/" + id + this.apikey;
         return this.http.get(url);
     };
     return PersonService;

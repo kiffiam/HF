@@ -25,6 +25,10 @@ var MovieService = (function () {
         var url = this.url + "/movie/top_rated" + this.apikey;
         return this.http.get(url);
     };
+    MovieService.prototype.getPopularMovies = function () {
+        var url = this.url + "/movie/popular" + this.apikey;
+        return this.http.get(url);
+    };
     MovieService.prototype.getMovieCredits = function (id) {
         var url = this.url + "/movie/" + id + "/credits" + this.apikey;
         return this.http.get(url);

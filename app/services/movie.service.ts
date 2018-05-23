@@ -26,6 +26,11 @@ export class MovieService {
         return this.http.get<SearchResult<Movie>>(url);
     }
 
+    getPopularMovies(): Observable<SearchResult<Movie>>{
+        let url = this.url + "/movie/popular" + this.apikey;
+        return this.http.get<SearchResult<Movie>>(url);
+    }
+
     getMovieCredits(id: number): Observable<MovieCredits> {
         let url = this.url + "/movie/" + id + "/credits" + this.apikey;
         return this.http.get<MovieCredits>(url);

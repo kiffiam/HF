@@ -29,6 +29,10 @@ var TvShowService = (function () {
         var url = this.url + "/tv/" + id + "/credits" + this.apikey;
         return this.http.get(url);
     };
+    TvShowService.prototype.getPopularTvShows = function () {
+        var url = this.url + "/tv/popular" + this.apikey;
+        return this.http.get(url);
+    };
     return TvShowService;
 }());
 TvShowService = __decorate([

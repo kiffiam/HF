@@ -19,7 +19,9 @@ import { SearchMovieComponent } from './components/search/search-movie/search-mo
 import { SearchTvShowComponent } from './components/search/search-tvshow/search-tvshow.component';
 
 import { TopMoviePageComponent } from './components/movies/topmovie-page/topmovie-page.component';
+import { PopularMoviePageComponent } from './components/movies/popularmovie-page/popularmovie-page.component';
 import { TopTvShowPageComponent } from './components/tvshows/toptvshow-page/toptvshow-page.component';
+import { PopularTvShowPageComponent} from './components/tvshows/populartvshow-page/populartvshow-page-component';
 
 import { PersonPageComponent } from './components/person-page/person-page.component';
 
@@ -32,7 +34,9 @@ let routes: Route[] = [
   { path: "searchmovie", component: SearchMovieComponent },
   { path: "searchtvshow", component: SearchTvShowComponent },
   { path: "topmovies", component: TopMoviePageComponent },
+  { path: "popularmovies", component: PopularMoviePageComponent },
   { path: "toptvshows", component: TopTvShowPageComponent },
+  { path: "populartvshows", component: PopularTvShowPageComponent }
   { path: "movie/:id", component: MoviePageComponent },
   { path: "tvshow/:id", component: TvShowPageComponent },
   { path: "person/:id", component: PersonPageComponent }
@@ -49,9 +53,11 @@ let routes: Route[] = [
   declarations: [
     AppComponent,
     TopMoviePageComponent,
+    PopularMoviePageComponent,
     MoviePageComponent,
     MovieItemComponent,
     TopTvShowPageComponent,
+    PopularTvShowPageComponent,
     TvShowItemComponent,
     TvShowPageComponent,
     PagingComponent,

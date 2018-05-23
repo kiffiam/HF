@@ -28,4 +28,9 @@ export class TvShowService {
         return this.http.get<TvShowCredits>(url);
     }
 
+    getPopularTvShows():Observable<SearchResult<Tvshow>> {
+        let url = this.url +"/tv/popular" + this.apikey;
+        return this.http.get<SearchResult<Tvshow>>(url);
+    }
+
 }
