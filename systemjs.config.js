@@ -14,6 +14,7 @@
         '@angular/router': 'angular:router/bundles/router.umd.js',
         '@angular/router/upgrade': 'angular:router/bundles/router-upgrade.umd.js',
         '@angular/forms': 'angular:forms/bundles/forms.umd.js',
+        
 
         // other libraries
         'rxjs': 'npm:rxjs',

@@ -9,7 +9,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
-//import {HttpClientModule} from '@angular/common/http';
+//import { CommonModule } from '@angular/common';
+//import { HttpClientModule } from '@angular/common/http';
 var platform_browser_1 = require("@angular/platform-browser");
 var ng2_bootstrap_1 = require("ng2-bootstrap");
 var app_component_1 = require("./components/app/app.component");
@@ -37,12 +38,15 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule,
+        imports: [
+            platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(routes),
             forms_1.FormsModule,
             //HttpClientModule,
+            //CommonModule,
             //HttpModule,
-            ng2_bootstrap_1.CollapseModule.forRoot()],
+            ng2_bootstrap_1.CollapseModule.forRoot()
+        ],
         declarations: [
             app_component_1.AppComponent,
             topmovie_page_component_1.TopMoviePageComponent,

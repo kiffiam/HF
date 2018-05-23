@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-//import {HttpClientModule} from '@angular/common/http';
+//import { CommonModule } from '@angular/common';
+//import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { CollapseModule } from 'ng2-bootstrap'
 import { AppComponent } from "./components/app/app.component";
@@ -30,10 +31,12 @@ let routes: Route[] = [
 ];
 
 @NgModule({
-  imports: [BrowserModule,
+  imports: [
+    BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
     //HttpClientModule,
+    //CommonModule,
     //HttpModule,
     CollapseModule.forRoot()],
   declarations: [
