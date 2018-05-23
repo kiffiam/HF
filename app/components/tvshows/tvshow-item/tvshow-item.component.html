@@ -1,0 +1,14 @@
+<div class="item" *ngIf="tvshow">
+        <a routerLink="/tvshow/{{tvshow.id}}">
+            <img *ngIf="tvshow.poster_path" src="https://image.tmdb.org/t/p/w185{{tvshow.poster_path}}" alt="{{tvshow.title}}">
+            <img *ngIf="!tvshow.poster_path" src="http://via.placeholder.com/185x250" alt="Placeholder">
+        </a>
+        <a routerLink="/tvshow/{{tvshow.id}}">
+            <h3>{{tvshow.name}} ({{tvshow.first_air_date | slice:0:4}} - )</h3>
+        </a>
+        <h4 *ngIf="tvshow.vote_average !== 0">
+            {{tvshow.vote_average}}
+        </h4>
+        <p>{{tvshow.overview}}</p>
+        <div style="clear:both"></div>
+    </div>

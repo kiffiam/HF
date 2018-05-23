@@ -10,17 +10,28 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var TvShowService = (function () {
-    function TvShowService() {
+    function TvShowService(http) {
+        this.http = http;
+        this.url = 'https://api.themoviedb.org/3';
+        this.apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4';
     }
     TvShowService.prototype.getTvShows = function () {
         throw new Error("Method not implemented.");
+    };
+    /*getTvShow(:id){
+
+    }*/
+    TvShowService.prototype.getTopTvShows = function () {
+        var url = this.url + "/tv/top_rated" + this.apikey;
+        return this.http.get(url);
     };
     return TvShowService;
 }());
 TvShowService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.HttpClient])
 ], TvShowService);
 exports.TvShowService = TvShowService;
 //# sourceMappingURL=tvshow.service.js.map

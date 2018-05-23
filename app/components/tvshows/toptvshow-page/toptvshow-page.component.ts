@@ -13,13 +13,18 @@ export class TopTvShowPageComponent implements OnInit{
 
     constructor(private tvShowService: TvShowService) { }
 
-    tvshows: Observable<SearchResult<Movie>>;
+    tvshows: Observable<SearchResult<Tvshow>>;
+    
+    currentPage = 1;
+    maxPages = 0;
+
 
     ngOnInit() {
         this.getResults();
     }
 
     getResults() {
-
+        this.tvshows = this.tvShowService.getTopTvShows();
+        this.tvshows.subscribe(r => this.maxPages);
     }
 }

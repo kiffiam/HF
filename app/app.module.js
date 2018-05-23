@@ -31,7 +31,8 @@ var routes = [
     { path: "search", component: search_page_component_1.SearchPageComponent },
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
     { path: "toptvshows", component: toptvshow_page_component_1.TopTvShowPageComponent },
-    { path: "movie/:id", component: movie_page_component_1.MoviePageComponent }
+    { path: "movie/:id", component: movie_page_component_1.MoviePageComponent },
+    { path: "tvshow/:id", component: tvshow_page_component_1.TvShowPageComponent }
 ];
 var AppModule = (function () {
     function AppModule() {

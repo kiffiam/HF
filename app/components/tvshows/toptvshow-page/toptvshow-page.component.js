@@ -14,11 +14,16 @@ var tvshow_service_1 = require("../../../services/tvshow.service");
 var TopTvShowPageComponent = (function () {
     function TopTvShowPageComponent(tvShowService) {
         this.tvShowService = tvShowService;
+        this.currentPage = 1;
+        this.maxPages = 0;
     }
     TopTvShowPageComponent.prototype.ngOnInit = function () {
         this.getResults();
     };
     TopTvShowPageComponent.prototype.getResults = function () {
+        var _this = this;
+        this.tvshows = this.tvShowService.getTopTvShows();
+        this.tvshows.subscribe(function (r) { return _this.maxPages; });
     };
     return TopTvShowPageComponent;
 }());

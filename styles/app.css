@@ -14,7 +14,7 @@
     display: block;
     padding: 5px 8px;
     border: 1px solid rgb(100, 99, 128);
-    background: #EEEEFF;
+    background: rgb(32, 32, 37);
     color: #18bc9c;
 }
 
@@ -32,9 +32,11 @@ img.profile-picture {
     max-width: 200px;
     max-height: 200px;
 }
+
 button[disabled='disabled'] {
     color: darkgrey !important;
 }
+
 .paging .page-numbers {
     text-align: center;
     line-height: 45px;

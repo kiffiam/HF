@@ -30,7 +30,8 @@ let routes: Route[] = [
   { path: "search", component: SearchPageComponent },
   { path: "topmovies", component: TopMoviePageComponent },
   { path: "toptvshows", component: TopTvShowPageComponent },
-  { path: "movie/:id", component: MoviePageComponent}
+  { path: "movie/:id", component: MoviePageComponent},
+  { path: "tvshow/:id", component: TvShowPageComponent}
 ];
 
 @NgModule({
