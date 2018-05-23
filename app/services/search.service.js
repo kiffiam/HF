@@ -21,8 +21,12 @@ var SearchService = (function () {
         var url = "https://api.themoviedb.org/3/movie/550";
         return this.http.get(url);
     };
-    SearchService.prototype.getSearchResult = function (query /*, page: number */) {
+    SearchService.prototype.getMovieResult = function (query /*, page: number */) {
         var url = this.url + "/search/movie" + this.apikey + "&query=" + query;
+        return this.http.get(url);
+    };
+    SearchService.prototype.getTvshowResult = function (query /*, page: number */) {
+        var url = this.url + "/search/tv" + this.apikey + "&query=" + query;
         return this.http.get(url);
     };
     return SearchService;

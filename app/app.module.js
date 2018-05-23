@@ -20,7 +20,8 @@ var movie_page_component_1 = require("./components/movies/movie-page/movie-page.
 var movie_item_component_1 = require("./components/movies/movie-item/movie-item.component");
 var tvshow_page_component_1 = require("./components/tvshows/tvshow-page/tvshow-page.component");
 var tvshow_item_component_1 = require("./components/tvshows/tvshow-item/tvshow-item.component");
-var search_page_component_1 = require("./components/search-page/search-page.component");
+var search_movie_component_1 = require("./components/search/search-movie/search-movie.component");
+var search_tvshow_component_1 = require("./components/search/search-tvshow/search-tvshow.component");
 var topmovie_page_component_1 = require("./components/movies/topmovie-page/topmovie-page.component");
 var toptvshow_page_component_1 = require("./components/tvshows/toptvshow-page/toptvshow-page.component");
 var tvshow_service_1 = require("./services/tvshow.service");
@@ -28,7 +29,8 @@ var movie_service_1 = require("./services/movie.service");
 var person_service_1 = require("./services/person.service");
 var search_service_1 = require("./services/search.service");
 var routes = [
-    { path: "search", component: search_page_component_1.SearchPageComponent },
+    { path: "searchmovie", component: search_movie_component_1.SearchMovieComponent },
+    { path: "searchtvshow", component: search_tvshow_component_1.SearchTvShowComponent },
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
     { path: "toptvshows", component: toptvshow_page_component_1.TopTvShowPageComponent },
     { path: "movie/:id", component: movie_page_component_1.MoviePageComponent },
@@ -59,7 +61,8 @@ AppModule = __decorate([
             tvshow_item_component_1.TvShowItemComponent,
             tvshow_page_component_1.TvShowPageComponent,
             paging_component_1.PagingComponent,
-            search_page_component_1.SearchPageComponent
+            search_movie_component_1.SearchMovieComponent,
+            search_tvshow_component_1.SearchTvShowComponent
         ],
         exports: [],
         providers: [

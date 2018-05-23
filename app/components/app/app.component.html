@@ -6,13 +6,15 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
                 <a routerLink="/" class="navbar-brand">{{title}}</a>
             </div>
             <div class="navbar-collapse" [collapse]="isNavbarCollapsed" id="navbar">
                 <ul class="nav navbar-nav">
                     <!--Ezek a menubáron a feliratok-->
-                    <li [class.active]="router.isActive('/search', false)"> <a routerLink="/search">Search</a> </li>
+                    <li [class.active]="router.isActive('/searchmovie', false)"> <a routerLink="/searchmovie">Search Movie</a> </li>
+                    <li [class.active]="router.isActive('/searchtvshow', false)"> <a routerLink="/searchtvshow">Search Tv Show</a> </li>
                     <li [class.active]="router.isActive('/topmovies', false)"> <a routerLink="/topmovies">Top Rated Movies</a> </li>
                     <li [class.active]="router.isActive('/toptvshows', false)"> <a routerLink="/toptvshows">Top TV Shows</a> </li>
                 </ul>

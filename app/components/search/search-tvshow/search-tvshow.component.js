@@ -10,34 +10,34 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var search_service_1 = require("../../services/search.service");
-var SearchPageComponent = (function () {
-    function SearchPageComponent(searchService) {
+var search_service_1 = require("../../../services/search.service");
+var SearchTvShowComponent = (function () {
+    function SearchTvShowComponent(searchService) {
         this.searchService = searchService;
         this.searchTerm = "";
         this.currentPage = 1;
         this.maxPages = 0;
     }
-    SearchPageComponent.prototype.ngOnInit = function () {
+    SearchTvShowComponent.prototype.ngOnInit = function () {
         this.getResults();
     };
-    SearchPageComponent.prototype.getResults = function () {
+    SearchTvShowComponent.prototype.getResults = function () {
         /*this.multiSearchResults = this.searchService
         .getMultiSearchResult({ query: this.searchTerm, page: this.currentPage });*/
         var _this = this;
-        this.searchResults = this.searchService.getSearchResult(this.searchTerm /*, this.currentPage*/);
+        this.searchResults = this.searchService.getTvshowResult(this.searchTerm /*, this.currentPage*/);
         this.searchResults.subscribe(function (r) { return _this.maxPages; });
         //this.searchResults.subscribe(r => {this.maxPages = Math.ceil(r.allResults / 5);
         //this.currentPage = r.page;
     };
-    return SearchPageComponent;
+    return SearchTvShowComponent;
 }());
-SearchPageComponent = __decorate([
+SearchTvShowComponent = __decorate([
     core_1.Component({
-        selector: "search-page",
-        templateUrl: "./search-page.component.html"
+        selector: "search-tvshow",
+        templateUrl: "./search-tvshow.component.html"
     }),
     __metadata("design:paramtypes", [search_service_1.SearchService])
-], SearchPageComponent);
-exports.SearchPageComponent = SearchPageComponent;
-//# sourceMappingURL=search-page.component.js.map
+], SearchTvShowComponent);
+exports.SearchTvShowComponent = SearchTvShowComponent;
+//# sourceMappingURL=search-tvshow.component.js.map

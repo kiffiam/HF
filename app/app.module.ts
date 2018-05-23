@@ -16,7 +16,8 @@ import { MovieItemComponent } from './components/movies/movie-item/movie-item.co
 import { TvShowPageComponent } from './components/tvshows/tvshow-page/tvshow-page.component';
 import { TvShowItemComponent } from './components/tvshows/tvshow-item/tvshow-item.component';
 
-import { SearchPageComponent } from './components/search-page/search-page.component';
+import { SearchMovieComponent } from './components/search/search-movie/search-movie.component';
+import { SearchTvShowComponent} from './components/search/search-tvshow/search-tvshow.component';
 
 import { TopMoviePageComponent } from './components/movies/topmovie-page/topmovie-page.component';
 import { TopTvShowPageComponent } from './components/tvshows/toptvshow-page/toptvshow-page.component';
@@ -27,7 +28,8 @@ import { PersonService } from './services/person.service';
 import { SearchService } from './services/search.service';
 
 let routes: Route[] = [
-  { path: "search", component: SearchPageComponent },
+  { path: "searchmovie", component: SearchMovieComponent },
+  { path: "searchtvshow", component: SearchTvShowComponent},
   { path: "topmovies", component: TopMoviePageComponent },
   { path: "toptvshows", component: TopTvShowPageComponent },
   { path: "movie/:id", component: MoviePageComponent},
@@ -52,7 +54,8 @@ let routes: Route[] = [
     TvShowItemComponent, 
     TvShowPageComponent,
     PagingComponent,
-    SearchPageComponent],
+    SearchMovieComponent,
+    SearchTvShowComponent],
   exports: [],
   providers: [
     MovieService,

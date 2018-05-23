@@ -21,9 +21,14 @@ export class SearchService {
         return this.http.get<Movie>(url);
     }
 
-    getSearchResult(query: string/*, page: number */): Observable<SearchResult<Movie>> {
+    getMovieResult(query: string/*, page: number */): Observable<SearchResult<Movie>> {
         let url = this.url +"/search/movie" + this.apikey + "&query=" + query;
         return this.http.get<SearchResult<Movie>>(url);
+    }
+
+    getTvshowResult(query: string/*, page: number */): Observable<SearchResult<Tvshow>> {
+        let url = this.url +"/search/tv" + this.apikey + "&query=" + query;
+        return this.http.get<SearchResult<Tvshow>>(url);
     }
 
 }
