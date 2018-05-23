@@ -8,28 +8,30 @@ import { SearchResult } from "../models/search-result.type";
 
 @Injectable()
 export class MovieService {
-    url = 'https://api.themoviedb.org/3/';
-    apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4'
+    baseUrl = "https://api.themoviedb.org/3";
 
-    constructor(/*private http: HttpClient*/) {
+    constructor(private http: HttpClient) {
     }
 
-    private movies: Movie[];
+    getMovies(category: string, options?: { page?: number }): Observable<SearchResult<Movie>> {
+        let url = this.baseUrl + "/movie/" + category;
 
-    getMovies(): any {
-        throw new Error("Method not implemented.");
+        let params = new HttpParams();
+        params = (options && options.page) ? params.append('page', '' + options.page) : params;
+
+        return this.http.get<SearchResult<Movie>>(url, { params: params });
     }
 
-    /*getMovie(id: number): Observable<Movie> {
-        let url = this.url + "/movie/" + id + this.apikey;
+
+    getMovie(id: number): Observable<Movie> {
+        let url = this.baseUrl + "/movie/" + id;
 
         return this.http.get<Movie>(url);
+    }
+
+    /*getMovieCredits(id: number): Observable<MovieCredits> {
+        let url = this.baseUrl + "/movie/" + id + "/credits";
+
+        return this.http.get<MovieCredits>(url);
     }*/
-
-    /*getTopMovies(): Observable<SearchResult<Movie>> {
-        let url = this.url +"/movie/top_rated" + this.apikey;
-        return this.http.get<SearchResult<Movie>>(url);
-    }*/
-
-
 }

@@ -1,7 +1,6 @@
 export interface SearchResult<T> {
-    results: T[];
     page: number;
-    pageSize: number;
-    allResults: number;
-    searchTerm: string;
+    total_results: number;
+    total_pages: number;
+    results: T[];
 }

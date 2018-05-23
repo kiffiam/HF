@@ -21,8 +21,9 @@ var TopMoviePageComponent = (function () {
         this.getResults();
     };
     TopMoviePageComponent.prototype.getResults = function () {
-        /* this.movies = this.movieService.getTopMovies();
-         this.movies.subscribe(r => this.maxPages);*/
+        var _this = this;
+        this.movies = this.movieService.getMovies('top_rated', { page: this.currentPage });
+        this.movies.subscribe(function (r) { return _this.maxPages = r.total_pages; });
     };
     return TopMoviePageComponent;
 }());
