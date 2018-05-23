@@ -15,12 +15,12 @@ export class TvShowPageComponent {
         private route: ActivatedRoute) { }
 
     tvshow: Tvshow;
-    tvShowCredits: TvShowCredits
+    tvShowCredits: TvShowCredits;
     
     ngOnInit() {
         this.getTvShow();
+        this.getTvShowCredits();
     }
-
 
     getTvShow(): void {
         const id = +this.route.snapshot.paramMap.get('id');
@@ -29,6 +29,8 @@ export class TvShowPageComponent {
     }
 
     getTvShowCredits():void{
-        
+        const id = +this.route.snapshot.paramMap.get('id');
+        let o = this.TvShowService.getTvShowCredits(id);
+        o.subscribe(m => this.tvShowCredits = m);
     }
 }

@@ -24,7 +24,7 @@ export class TvShowService {
     }
 
     getTvShowCredits(id:number):Observable<TvShowCredits>{
-        let url = this.url +"/tv/" + id + this.apikey;
+        let url = this.url +"/tv/" + id + "/credits"+ this.apikey;
         return this.http.get<TvShowCredits>(url);
     }
 

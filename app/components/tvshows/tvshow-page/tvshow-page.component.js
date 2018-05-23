@@ -19,6 +19,7 @@ var TvShowPageComponent = (function () {
     }
     TvShowPageComponent.prototype.ngOnInit = function () {
         this.getTvShow();
+        this.getTvShowCredits();
     };
     TvShowPageComponent.prototype.getTvShow = function () {
         var _this = this;
@@ -27,6 +28,10 @@ var TvShowPageComponent = (function () {
         o.subscribe(function (m) { return _this.tvshow = m; });
     };
     TvShowPageComponent.prototype.getTvShowCredits = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        var o = this.TvShowService.getTvShowCredits(id);
+        o.subscribe(function (m) { return _this.tvShowCredits = m; });
     };
     return TvShowPageComponent;
 }());

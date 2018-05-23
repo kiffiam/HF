@@ -26,7 +26,7 @@ var TvShowService = (function () {
         return this.http.get(url);
     };
     TvShowService.prototype.getTvShowCredits = function (id) {
-        var url = this.url + "/tv/" + id + this.apikey;
+        var url = this.url + "/tv/" + id + "/credits" + this.apikey;
         return this.http.get(url);
     };
     return TvShowService;
