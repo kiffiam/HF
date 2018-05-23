@@ -21,10 +21,15 @@ var TopMoviePageComponent = (function () {
         this.getResults();
     };
     TopMoviePageComponent.prototype.getResults = function () {
+<<<<<<< HEAD:app/components/topmovie-page/topmovie-page.component.js
 <<<<<<< HEAD:app/components/movies/topmovie-page/topmovie-page.component.js
         var _this = this;
         this.movies = this.movieService.getMovies('top_rated', { page: this.currentPage });
         this.movies.subscribe(function (r) { return _this.maxPages = r.total_pages; });
+=======
+        /*this.movies = this.movieService.getTopMovies({ page: this.currentPage });
+        //this.movies.subscribe(r => this.maxPages = r.total_pages);*/
+>>>>>>> parent of 333eaa7... sarfosmielot elbaszom:app/components/topmovie-page/topmovie-page.component.js
 =======
         /*this.movies = this.movieService.getTopMovies({ page: this.currentPage });
         //this.movies.subscribe(r => this.maxPages = r.total_pages);*/

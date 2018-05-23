@@ -14,9 +14,12 @@ export class MovieService {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     getMovies(category: string, options?: { page?: number }): Observable<SearchResult<Movie>> {
         let url = this.baseUrl + "/movie/" + category;
 =======
+=======
+>>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 
     private movies: Movie[];
 >>>>>>> parent of 333eaa7... sarfosmielot elbaszom
@@ -31,17 +34,23 @@ export class MovieService {
 =======
     /*getMovie(id: number): Observable<Movie> {
         let url = this.baseUrl + "/movie/" + id;
+<<<<<<< HEAD
+>>>>>>> parent of 333eaa7... sarfosmielot elbaszom
+=======
 >>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 
     getMovie(id: number): Observable<Movie> {
         let url = this.baseUrl + "/movie/" + id;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         return this.http.get<Movie>(url);
     }
 
     /*getMovieCredits(id: number): Observable<MovieCredits> {
         let url = this.baseUrl + "/movie/" + id + "/credits";
+=======
+>>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 =======
 >>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 
