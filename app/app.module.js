@@ -9,12 +9,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
-//import { CommonModule } from '@angular/common';
-//import { HttpClientModule } from '@angular/common/http';
+var common_1 = require("@angular/common");
+var http_1 = require("@angular/common/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var ng2_bootstrap_1 = require("ng2-bootstrap");
 var app_component_1 = require("./components/app/app.component");
 //import { HttpModule } from '@angular/http';
+var paging_component_1 = require("./components/paging/paging.component");
 var movie_page_component_1 = require("./components/movies/movie-page/movie-page.component");
 var movie_item_component_1 = require("./components/movies/movie-item/movie-item.component");
 var tvshow_page_component_1 = require("./components/tvshows/tvshow-page/tvshow-page.component");
@@ -30,6 +31,7 @@ var routes = [
     { path: "search", component: search_page_component_1.SearchPageComponent },
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
     { path: "toptvshows", component: toptvshow_page_component_1.TopTvShowPageComponent },
+    { path: "movie/:id", component: movie_page_component_1.MoviePageComponent }
 ];
 var AppModule = (function () {
     function AppModule() {
@@ -42,8 +44,8 @@ AppModule = __decorate([
             platform_browser_1.BrowserModule,
             router_1.RouterModule.forRoot(routes),
             forms_1.FormsModule,
-            //HttpClientModule,
-            //CommonModule,
+            http_1.HttpClientModule,
+            common_1.CommonModule,
             //HttpModule,
             ng2_bootstrap_1.CollapseModule.forRoot()
         ],
@@ -55,6 +57,7 @@ AppModule = __decorate([
             toptvshow_page_component_1.TopTvShowPageComponent,
             tvshow_item_component_1.TvShowItemComponent,
             tvshow_page_component_1.TvShowPageComponent,
+            paging_component_1.PagingComponent,
             search_page_component_1.SearchPageComponent
         ],
         exports: [],

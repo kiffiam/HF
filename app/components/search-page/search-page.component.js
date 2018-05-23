@@ -5,18 +5,33 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var search_service_1 = require("../../services/search.service");
 var SearchPageComponent = (function () {
-    function SearchPageComponent() {
+    function SearchPageComponent(searchService) {
+        this.searchService = searchService;
+        this.searchTerm = "";
     }
+    SearchPageComponent.prototype.ngOnInit = function () {
+        this.getResults();
+    };
+    //multiSearchResults: Observable<SearchResult<MultiSearchResult>>;
+    SearchPageComponent.prototype.getResults = function () {
+        /*this.multiSearchResults = this.searchService
+            .getMultiSearchResult({ query: this.searchTerm, page: this.currentPage });*/
+    };
     return SearchPageComponent;
 }());
 SearchPageComponent = __decorate([
     core_1.Component({
         selector: "search-page",
         templateUrl: "./search-page.component.html"
-    })
+    }),
+    __metadata("design:paramtypes", [search_service_1.SearchService])
 ], SearchPageComponent);
 exports.SearchPageComponent = SearchPageComponent;
 //# sourceMappingURL=search-page.component.js.map

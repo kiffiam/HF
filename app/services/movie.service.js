@@ -10,19 +10,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var MovieService = (function () {
-    function MovieService() {
-        this.url = 'https://api.themoviedb.org/3/';
+    function MovieService(http) {
+        this.http = http;
+        this.url = 'https://api.themoviedb.org/3';
         this.apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4';
     }
     MovieService.prototype.getMovies = function () {
         throw new Error("Method not implemented.");
     };
+    MovieService.prototype.getMovie = function (id) {
+        var url = this.url + "/movie/" + id + this.apikey;
+        return this.http.get(url);
+    };
+    MovieService.prototype.getTopMovies = function () {
+        var url = this.url + "/movie/top_rated" + this.apikey;
+        return this.http.get(url);
+    };
     return MovieService;
 }());
 MovieService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.HttpClient])
 ], MovieService);
 exports.MovieService = MovieService;
 //# sourceMappingURL=movie.service.js.map

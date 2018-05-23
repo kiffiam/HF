@@ -23,7 +23,7 @@ export class TopMoviePageComponent implements OnInit{
     
 
     getResults() {
-       /* this.movies = this.movieService.getTopMovies();
-        this.movies.subscribe(r => this.maxPages);*/
+        this.movies = this.movieService.getTopMovies();
+        this.movies.subscribe(r => this.maxPages);
     }
 }

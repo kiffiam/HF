@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Route } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-//import { CommonModule } from '@angular/common';
-//import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { CollapseModule } from 'ng2-bootstrap'
 import { AppComponent } from "./components/app/app.component";
 //import { HttpModule } from '@angular/http';
+
+import {PagingComponent} from './components/paging/paging.component';
 
 import { MoviePageComponent } from './components/movies/movie-page/movie-page.component';
 import { MovieItemComponent } from './components/movies/movie-item/movie-item.component';
@@ -28,6 +30,7 @@ let routes: Route[] = [
   { path: "search", component: SearchPageComponent },
   { path: "topmovies", component: TopMoviePageComponent },
   { path: "toptvshows", component: TopTvShowPageComponent },
+  { path: "movie/:id", component: MoviePageComponent}
 ];
 
 @NgModule({
@@ -35,8 +38,8 @@ let routes: Route[] = [
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
-    //HttpClientModule,
-    //CommonModule,
+    HttpClientModule,
+    CommonModule,
     //HttpModule,
     CollapseModule.forRoot()],
   declarations: [
@@ -47,6 +50,7 @@ let routes: Route[] = [
     TopTvShowPageComponent,
     TvShowItemComponent, 
     TvShowPageComponent,
+    PagingComponent,
     SearchPageComponent],
   exports: [],
   providers: [

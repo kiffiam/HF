@@ -3,7 +3,7 @@
     <div class="panel-body">
         <!--<paging-component (onPrevPage)="currentPage=currentPage-1;getResults()" (onNextPage)="currentPage=currentPage+1;getResults()"
             [currentPage]="currentPage" [maxPages]="maxPages"></paging-component>-->
-        <div class="cards-list">
+        <div class="item">
             <ng-template ngFor let-movie [ngForOf]="(movies | async)?.results">
                 <movie-item [movie]=movie></movie-item>
             </ng-template>

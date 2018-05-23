@@ -10,14 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var http_1 = require("@angular/common/http");
 var SearchService = (function () {
-    function SearchService() {
+    function SearchService(http) {
+        this.http = http;
+        this.url = "https://api.themoviedb.org/3";
     }
+    SearchService.prototype.getFightClub = function () {
+        var url = "https://api.themoviedb.org/3/movie/550";
+        return this.http.get(url);
+    };
+    SearchService.prototype.getSearchResult = function () {
+    };
     return SearchService;
 }());
 SearchService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [http_1.HttpClient])
 ], SearchService);
 exports.SearchService = SearchService;
 //# sourceMappingURL=search.service.js.map

@@ -8,10 +8,10 @@ import { SearchResult } from "../models/search-result.type";
 
 @Injectable()
 export class MovieService {
-    url = 'https://api.themoviedb.org/3/';
+    url = 'https://api.themoviedb.org/3';
     apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4'
 
-    constructor(/*private http: HttpClient*/) {
+    constructor(private http: HttpClient) {
     }
 
     private movies: Movie[];
@@ -20,15 +20,15 @@ export class MovieService {
         throw new Error("Method not implemented.");
     }
 
-    /*getMovie(id: number): Observable<Movie> {
+    getMovie(id: number): Observable<Movie> {
         let url = this.url + "/movie/" + id + this.apikey;
         return this.http.get<Movie>(url);
-    }*/
+    }
 
-    /*getTopMovies(): Observable<SearchResult<Movie>> {
+    getTopMovies(): Observable<SearchResult<Movie>> {
         let url = this.url +"/movie/top_rated" + this.apikey;
         return this.http.get<SearchResult<Movie>>(url);
-    }*/
+    }
 
 
 }
