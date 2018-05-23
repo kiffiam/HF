@@ -11,14 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var tvshow_service_1 = require("../../../services/tvshow.service");
+var router_1 = require("@angular/router");
 var TvShowPageComponent = (function () {
-    function TvShowPageComponent(TvShowService) {
+    function TvShowPageComponent(TvShowService, route) {
         this.TvShowService = TvShowService;
+        this.route = route;
     }
     TvShowPageComponent.prototype.ngOnInit = function () {
-        this.getResults();
+        this.getTvShow();
     };
-    TvShowPageComponent.prototype.getResults = function () {
+    TvShowPageComponent.prototype.getTvShow = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        var o = this.TvShowService.getTvShow(id);
+        o.subscribe(function (m) { return _this.tvshow = m; });
     };
     return TvShowPageComponent;
 }());
@@ -27,7 +33,8 @@ TvShowPageComponent = __decorate([
         selector: "tvshow-page",
         templateUrl: "./tvshow-page.component.html"
     }),
-    __metadata("design:paramtypes", [tvshow_service_1.TvShowService])
+    __metadata("design:paramtypes", [tvshow_service_1.TvShowService,
+        router_1.ActivatedRoute])
 ], TvShowPageComponent);
 exports.TvShowPageComponent = TvShowPageComponent;
 //# sourceMappingURL=tvshow-page.component.js.map

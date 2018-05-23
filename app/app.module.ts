@@ -6,7 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { CollapseModule } from 'ng2-bootstrap'
 import { AppComponent } from "./components/app/app.component";
-//import { HttpModule } from '@angular/http';
 
 import {PagingComponent} from './components/paging/paging.component';
 
@@ -43,7 +42,6 @@ let routes: Route[] = [
     FormsModule,
     HttpClientModule,
     CommonModule,
-    //HttpModule,
     CollapseModule.forRoot()],
   declarations: [
     AppComponent,

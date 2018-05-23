@@ -20,9 +20,10 @@ var TvShowService = (function () {
     TvShowService.prototype.getTvShows = function () {
         throw new Error("Method not implemented.");
     };
-    /*getTvShow(:id){
-
-    }*/
+    TvShowService.prototype.getTvShow = function (id) {
+        var url = this.url + "/tv/" + id + this.apikey;
+        return this.http.get(url);
+    };
     TvShowService.prototype.getTopTvShows = function () {
         var url = this.url + "/tv/top_rated" + this.apikey;
         return this.http.get(url);

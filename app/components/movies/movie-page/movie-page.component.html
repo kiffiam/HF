@@ -1,7 +1,26 @@
 <div class="col-lg-10 panel panel-info">
-    <div class="panel-body">
-        <div class="cards-list">
-            <h6>{{movie.title}}</h6>
-        </div>
+    <div class="panel-body details">
+        <img *ngIf="movie.poster_path" src="https://image.tmdb.org/t/p/w185{{movie.poster_path}}" alt="{{movie.title}}">
+        <img *ngIf="!movie.poster_path" src="http://via.placeholder.com/185x250" alt="Placeholder">
+        <a>
+            <h3>{{movie.title}}</h3>
+        </a>
+        <h3>Release year: {{movie.release_date | slice:0:4}}</h3>
+        <h4>Vote: {{movie.vote_average}}</h4>
+
+
+        <p>{{movie.overview}}</p>
+
+        <h6>Budget: {{movie.budget}} USD</h6>
+        <h6>Original language: {{movie.original_language}}</h6>
+        <h6>Runtime: {{movie.runtime}} minutes</h6>
+        <h6 *ngIf="movie.adult === false">
+            Adult: no
+        </h6>
+        <h6 *ngIf="movie.adult === true">
+            Adult: yes
+        </h6>
+
+        <div style="clear:both"></div>
     </div>
 </div>

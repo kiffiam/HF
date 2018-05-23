@@ -1,8 +1,9 @@
 import { Component } from "@angular/core";
-import {TvShowService} from '../../../services/tvshow.service';
+import { TvShowService } from '../../../services/tvshow.service';
 import { Observable } from "rxjs/Observable";
 import { Tvshow } from "../../../models/tvshow.type";
 import { SearchResult } from "../../../models/search-result.type";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "tvshow-page",
@@ -10,13 +11,19 @@ import { SearchResult } from "../../../models/search-result.type";
 })
 
 export class TvShowPageComponent {
-    constructor(private TvShowService: TvShowService) { }
-    ngOnInit() {
-        this.getResults();
-}
-        tvshow: Observable<SearchResult<Tvshow>>;
+    constructor(private TvShowService: TvShowService,
+        private route: ActivatedRoute) { }
 
-        getResults() {
-            
+    tvshow: Tvshow;
+    
+    ngOnInit() {
+        this.getTvShow();
+    }
+
+
+    getTvShow(): void {
+        const id = +this.route.snapshot.paramMap.get('id');
+        let o = this.TvShowService.getTvShow(id);
+        o.subscribe(m => this.tvshow = m);
     }
 }

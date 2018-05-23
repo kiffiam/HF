@@ -14,7 +14,6 @@ var http_1 = require("@angular/common/http");
 var platform_browser_1 = require("@angular/platform-browser");
 var ng2_bootstrap_1 = require("ng2-bootstrap");
 var app_component_1 = require("./components/app/app.component");
-//import { HttpModule } from '@angular/http';
 var paging_component_1 = require("./components/paging/paging.component");
 var movie_page_component_1 = require("./components/movies/movie-page/movie-page.component");
 var movie_item_component_1 = require("./components/movies/movie-item/movie-item.component");
@@ -49,7 +48,6 @@ AppModule = __decorate([
             forms_1.FormsModule,
             http_1.HttpClientModule,
             common_1.CommonModule,
-            //HttpModule,
             ng2_bootstrap_1.CollapseModule.forRoot()
         ],
         declarations: [

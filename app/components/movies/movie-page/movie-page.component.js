@@ -11,15 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var movie_service_1 = require("../../../services/movie.service");
+var router_1 = require("@angular/router");
 var MoviePageComponent = (function () {
-    function MoviePageComponent(movieService) {
+    function MoviePageComponent(movieService, route) {
         this.movieService = movieService;
+        this.route = route;
     }
     MoviePageComponent.prototype.ngOnInit = function () {
-        this.getMovies();
+        this.getMovie();
     };
-    MoviePageComponent.prototype.getMovies = function () {
-        this.movies = this.movieService.getMovies();
+    MoviePageComponent.prototype.getMovie = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        var o = this.movieService.getMovie(id);
+        o.subscribe(function (m) { return _this.movie = m; });
     };
     return MoviePageComponent;
 }());
@@ -28,7 +33,8 @@ MoviePageComponent = __decorate([
         selector: "movie-page",
         templateUrl: "./movie-page.component.html"
     }),
-    __metadata("design:paramtypes", [movie_service_1.MovieService])
+    __metadata("design:paramtypes", [movie_service_1.MovieService,
+        router_1.ActivatedRoute])
 ], MoviePageComponent);
 exports.MoviePageComponent = MoviePageComponent;
 //# sourceMappingURL=movie-page.component.js.map

@@ -19,9 +19,10 @@ export class TvShowService {
         throw new Error("Method not implemented.");
     }
 
-    /*getTvShow(:id){
-
-    }*/
+    getTvShow(id: number): Observable<Tvshow> {
+        let url = this.url + "/tv/" + id + this.apikey;
+        return this.http.get<Tvshow>(url);
+    }
 
     getTopTvShows(): Observable<SearchResult<Tvshow>> {
         let url = this.url +"/tv/top_rated" + this.apikey;

@@ -13,9 +13,15 @@
 .item {
     display: block;
     padding: 5px 8px;
-    border: 1px solid rgb(100, 99, 128);
-    background: rgb(32, 32, 37);
-    color: #18bc9c;
+    border: 1px solid rgb(0, 0, 0);
+    background: #2196F3;
+    color: #ffffff;
+
+}
+
+.item a{
+    background: #2196F3;
+    color: #ffffff;
 }
 
 .item li {
@@ -40,4 +46,25 @@ button[disabled='disabled'] {
 .paging .page-numbers {
     text-align: center;
     line-height: 45px;
+}
+
+.details {
+    display: block;
+    padding: 5px 8px;
+    border: 1px solid rgb(0, 0, 0);
+    background: #2196F3;
+    color: #ffffff;
+}
+
+.details a {
+    display: block;
+    padding: 5px 8px;
+    background: #2196F3;
+    color: #ffffff;
+}
+
+.details img {
+    width: 250px;
+    float: right;
+    margin: 10px 1em;
 }
