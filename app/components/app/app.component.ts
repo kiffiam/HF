@@ -10,10 +10,11 @@ import { Observable } from "rxjs/rx";
 export class AppComponent implements OnInit {
     constructor(private router: Router) { }
     ngOnInit() {
-        this.currentPageTitle = this.router.events
+       /* this.currentPageTitle = this.router.events
             .filter(e => e instanceof NavigationEnd)
+            //strings here are the actual text that appear on the top of the sites
             .map((() => _.find(["search", "topmovies", "toptvshows"], t => this.router.isActive('/' + t.toLowerCase(), false))).bind(this))
-    }
+    */ }
     
     title = "Filmvilág";
     isNavbarCollapsed = true;

@@ -13,12 +13,18 @@ var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
 var ng2_bootstrap_1 = require("ng2-bootstrap");
 var app_component_1 = require("./components/app/app.component");
-var http_1 = require("@angular/http");
+//import { HttpModule } from '@angular/http';
+var movie_page_component_1 = require("./components/movies/movie-page/movie-page.component");
+var movie_item_component_1 = require("./components/movies/movie-item/movie-item.component");
+var tvshow_page_component_1 = require("./components/tvshows/tvshow-page/tvshow-page.component");
+var tvshow_item_component_1 = require("./components/tvshows/tvshow-item/tvshow-item.component");
 var search_page_component_1 = require("./components/search-page/search-page.component");
-var topmovie_page_component_1 = require("./components/topmovie-page/topmovie-page.component");
-var toptvshow_page_component_1 = require("./components/toptvshow-page/toptvshow-page.component");
+var topmovie_page_component_1 = require("./components/movies/topmovie-page/topmovie-page.component");
+var toptvshow_page_component_1 = require("./components/tvshows/toptvshow-page/toptvshow-page.component");
 var tvshow_service_1 = require("./services/tvshow.service");
 var movie_service_1 = require("./services/movie.service");
+var person_service_1 = require("./services/person.service");
+var search_service_1 = require("./services/search.service");
 var routes = [
     { path: "search", component: search_page_component_1.SearchPageComponent },
     { path: "topmovies", component: topmovie_page_component_1.TopMoviePageComponent },
@@ -35,18 +41,24 @@ AppModule = __decorate([
             router_1.RouterModule.forRoot(routes),
             forms_1.FormsModule,
             //HttpClientModule,
-            http_1.HttpModule,
+            //HttpModule,
             ng2_bootstrap_1.CollapseModule.forRoot()],
         declarations: [
             app_component_1.AppComponent,
             topmovie_page_component_1.TopMoviePageComponent,
+            movie_page_component_1.MoviePageComponent,
+            movie_item_component_1.MovieItemComponent,
             toptvshow_page_component_1.TopTvShowPageComponent,
+            tvshow_item_component_1.TvShowItemComponent,
+            tvshow_page_component_1.TvShowPageComponent,
             search_page_component_1.SearchPageComponent
         ],
         exports: [],
         providers: [
             movie_service_1.MovieService,
-            tvshow_service_1.TvShowService
+            tvshow_service_1.TvShowService,
+            person_service_1.PersonService,
+            search_service_1.SearchService
         ],
         bootstrap: [app_component_1.AppComponent]
     })

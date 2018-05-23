@@ -10,17 +10,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var PersonService = (function () {
-    function PersonService() {
+var tvshow_service_1 = require("../../../services/tvshow.service");
+var TvShowPageComponent = (function () {
+    function TvShowPageComponent(TvShowService) {
+        this.TvShowService = TvShowService;
     }
-    PersonService.prototype.getPerson = function () {
-        throw new Error("Method not implemented.");
+    TvShowPageComponent.prototype.ngOnInit = function () {
+        this.getResults();
     };
-    return PersonService;
+    TvShowPageComponent.prototype.getResults = function () {
+    };
+    return TvShowPageComponent;
 }());
-PersonService = __decorate([
-    core_1.Injectable(),
-    __metadata("design:paramtypes", [])
-], PersonService);
-exports.PersonService = PersonService;
-//# sourceMappingURL=person.service.js.map
+TvShowPageComponent = __decorate([
+    core_1.Component({
+        selector: "tvshow-page",
+        templateUrl: "./tvshow-page.component.html"
+    }),
+    __metadata("design:paramtypes", [tvshow_service_1.TvShowService])
+], TvShowPageComponent);
+exports.TvShowPageComponent = TvShowPageComponent;
+//# sourceMappingURL=tvshow-page.component.js.map

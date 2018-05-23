@@ -10,10 +10,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var tvshow_service_1 = require("../../services/tvshow.service");
+var tvshow_service_1 = require("../../../services/tvshow.service");
 var TopTvShowPageComponent = (function () {
-    function TopTvShowPageComponent(TvShowService) {
-        this.TvShowService = TvShowService;
+    function TopTvShowPageComponent(tvShowService) {
+        this.tvShowService = tvShowService;
     }
     TopTvShowPageComponent.prototype.ngOnInit = function () {
         this.getResults();

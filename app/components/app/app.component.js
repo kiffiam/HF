@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var _ = require("lodash");
 var AppComponent = (function () {
     function AppComponent(router) {
         this.router = router;
@@ -19,10 +18,11 @@ var AppComponent = (function () {
         this.isNavbarCollapsed = true;
     }
     AppComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.currentPageTitle = this.router.events
-            .filter(function (e) { return e instanceof router_1.NavigationEnd; })
-            .map((function () { return _.find(["search", "topmovies", "toptvshows"], function (t) { return _this.router.isActive('/' + t.toLowerCase(), false); }); }).bind(this));
+        /* this.currentPageTitle = this.router.events
+             .filter(e => e instanceof NavigationEnd)
+             //strings here are the actual text that appear on the top of the sites
+             .map((() => _.find(["search", "topmovies", "toptvshows"], t => this.router.isActive('/' + t.toLowerCase(), false))).bind(this))
+     */ 
     };
     return AppComponent;
 }());

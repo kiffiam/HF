@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/rx";
-//import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Movie } from "../models/movie.type";
 import * as _ from "lodash";
 import { SearchResult } from "../models/search-result.type";
@@ -8,52 +8,27 @@ import { SearchResult } from "../models/search-result.type";
 
 @Injectable()
 export class MovieService {
-    baseUrl = "https://api.themoviedb.org/3";
+    url = 'https://api.themoviedb.org/3/';
+    apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4'
 
-    constructor(private http: HttpClient) {
+    constructor(/*private http: HttpClient*/) {
     }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-    getMovies(category: string, options?: { page?: number }): Observable<SearchResult<Movie>> {
-        let url = this.baseUrl + "/movie/" + category;
-=======
-=======
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 
     private movies: Movie[];
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
 
-        let params = new HttpParams();
-        params = (options && options.page) ? params.append('page', '' + options.page) : params;
-
-        return this.http.get<SearchResult<Movie>>(url, { params: params });
+    getMovies(): any {
+        throw new Error("Method not implemented.");
     }
 
-<<<<<<< HEAD
-=======
     /*getMovie(id: number): Observable<Movie> {
-        let url = this.baseUrl + "/movie/" + id;
-<<<<<<< HEAD
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
-=======
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
-
-    getMovie(id: number): Observable<Movie> {
-        let url = this.baseUrl + "/movie/" + id;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
+        let url = this.url + "/movie/" + id + this.apikey;
         return this.http.get<Movie>(url);
-    }
-
-    /*getMovieCredits(id: number): Observable<MovieCredits> {
-        let url = this.baseUrl + "/movie/" + id + "/credits";
-=======
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
-=======
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom
-
-        return this.http.get<MovieCredits>(url);
     }*/
+
+    /*getTopMovies(): Observable<SearchResult<Movie>> {
+        let url = this.url +"/movie/top_rated" + this.apikey;
+        return this.http.get<SearchResult<Movie>>(url);
+    }*/
+
+
 }

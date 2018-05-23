@@ -11,9 +11,10 @@
             </div>
             <div class="navbar-collapse" [collapse]="isNavbarCollapsed" id="navbar">
                 <ul class="nav navbar-nav">
+                    <!--Ezek a menubáron a feliratok-->
                     <li [class.active]="router.isActive('/search', false)"> <a routerLink="/search">Search</a> </li>
-                    <li [class.active]="router.isActive('/topmovies', false)"> <a routerLink="/topmovies">Top Movies</a> </li>
-                    <li [class.active]="router.isActive('/tvshows', false)"> <a routerLink="/tvshows">Top TV Shows</a> </li>
+                    <li [class.active]="router.isActive('/topmovies', false)"> <a routerLink="/topmovies">Top Rated Movies</a> </li>
+                    <li [class.active]="router.isActive('/toptvshows', false)"> <a routerLink="/toptvshows">Top TV Shows</a> </li>
                 </ul>
             </div>
         </div>

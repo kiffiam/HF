@@ -8,7 +8,8 @@ import { MovieService } from "../../../services/movie.service";
     selector: "topmovie-page",
     templateUrl: "./topmovie-page.component.html"
 })
-export class TopMoviePageComponent implements OnInit {
+export class TopMoviePageComponent implements OnInit{
+    
     constructor(private movieService: MovieService) { }
 
     movies: Observable<SearchResult<Movie>>;
@@ -19,10 +20,10 @@ export class TopMoviePageComponent implements OnInit {
     ngOnInit() {
         this.getResults();
     }
+    
 
     getResults() {
-        this.movies = this.movieService.getMovies('top_rated', { page: this.currentPage });
-        this.movies.subscribe(r => this.maxPages = r.total_pages);
+       /* this.movies = this.movieService.getTopMovies();
+        this.movies.subscribe(r => this.maxPages);*/
     }
-
 }

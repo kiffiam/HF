@@ -10,30 +10,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var movie_service_1 = require("../../services/movie.service");
+var movie_service_1 = require("../../../services/movie.service");
 var TopMoviePageComponent = (function () {
     function TopMoviePageComponent(movieService) {
         this.movieService = movieService;
+        this.currentPage = 1;
+        this.maxPages = 0;
     }
-    /* currentPage = 1;
-     maxPages = 0;*/
     TopMoviePageComponent.prototype.ngOnInit = function () {
         this.getResults();
     };
     TopMoviePageComponent.prototype.getResults = function () {
-<<<<<<< HEAD:app/components/topmovie-page/topmovie-page.component.js
-<<<<<<< HEAD:app/components/movies/topmovie-page/topmovie-page.component.js
-        var _this = this;
-        this.movies = this.movieService.getMovies('top_rated', { page: this.currentPage });
-        this.movies.subscribe(function (r) { return _this.maxPages = r.total_pages; });
-=======
-        /*this.movies = this.movieService.getTopMovies({ page: this.currentPage });
-        //this.movies.subscribe(r => this.maxPages = r.total_pages);*/
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom:app/components/topmovie-page/topmovie-page.component.js
-=======
-        /*this.movies = this.movieService.getTopMovies({ page: this.currentPage });
-        //this.movies.subscribe(r => this.maxPages = r.total_pages);*/
->>>>>>> parent of 333eaa7... sarfosmielot elbaszom:app/components/topmovie-page/topmovie-page.component.js
+        /* this.movies = this.movieService.getTopMovies();
+         this.movies.subscribe(r => this.maxPages);*/
     };
     return TopMoviePageComponent;
 }());

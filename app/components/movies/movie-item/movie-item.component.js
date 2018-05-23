@@ -10,24 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var tvshow_service_1 = require("../../services/tvshow.service");
-var TvShowPageComponent = (function () {
-    function TvShowPageComponent(TvShowService) {
-        this.TvShowService = TvShowService;
+var MovieItemComponent = (function () {
+    function MovieItemComponent() {
     }
-    TvShowPageComponent.prototype.ngOnInit = function () {
-        this.getResults();
+    MovieItemComponent.prototype.ngOnInit = function () {
     };
-    TvShowPageComponent.prototype.getResults = function () {
-    };
-    return TvShowPageComponent;
+    return MovieItemComponent;
 }());
-TvShowPageComponent = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], MovieItemComponent.prototype, "movie", void 0);
+MovieItemComponent = __decorate([
     core_1.Component({
-        selector: "tvshow-page",
-        templateUrl: "./tvshow-page.component.html"
+        selector: "movie-item",
+        templateUrl: "./movie-item.component.html"
     }),
-    __metadata("design:paramtypes", [tvshow_service_1.TvShowService])
-], TvShowPageComponent);
-exports.TvShowPageComponent = TvShowPageComponent;
-//# sourceMappingURL=tvshow-page.component.js.map
+    __metadata("design:paramtypes", [])
+], MovieItemComponent);
+exports.MovieItemComponent = MovieItemComponent;
+//# sourceMappingURL=movie-item.component.js.map

@@ -12,9 +12,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var TvShowService = (function () {
     function TvShowService() {
-        this.load();
     }
-    TvShowService.prototype.load = function () {
+    TvShowService.prototype.getTvShows = function () {
+        throw new Error("Method not implemented.");
     };
     return TvShowService;
 }());
