@@ -8,7 +8,11 @@ import { SearchResult } from "../models/search-result.type";
 export class SearchService {
     
     constructor() {
-      
+        this.load();
     }
 
+    private load(){
+
+    }
+    
 }

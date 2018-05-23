@@ -12,9 +12,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var PersonService = (function () {
     function PersonService() {
+        this.load();
     }
     PersonService.prototype.getPerson = function () {
         throw new Error("Method not implemented.");
+    };
+    PersonService.prototype.load = function () {
     };
     return PersonService;
 }());

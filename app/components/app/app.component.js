@@ -22,7 +22,7 @@ var AppComponent = (function () {
         var _this = this;
         this.currentPageTitle = this.router.events
             .filter(function (e) { return e instanceof router_1.NavigationEnd; })
-            .map((function () { return _.find(["Search", "TopMovies", "TopTvShows"], function (t) { return _this.router.isActive('/' + t.toLowerCase(), false); }); }).bind(this));
+            .map((function () { return _.find(["search", "topmovies", "toptvshows"], function (t) { return _this.router.isActive('/' + t.toLowerCase(), false); }); }).bind(this));
     };
     return AppComponent;
 }());

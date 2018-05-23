@@ -10,8 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+<<<<<<< HEAD:app/components/movies/movie-page/movie-page.component.js
 var router_1 = require("@angular/router");
 var movie_service_1 = require("../../../services/movie.service");
+=======
+var movie_service_1 = require("../../services/movie.service");
+>>>>>>> parent of 333eaa7... sarfosmielot elbaszom:app/components/movie-page/movie-page.component.js
 var MoviePageComponent = (function () {
     function MoviePageComponent(movieService, route) {
         this.movieService = movieService;

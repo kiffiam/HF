@@ -12,7 +12,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var SearchService = (function () {
     function SearchService() {
+        this.load();
     }
+    SearchService.prototype.load = function () {
+    };
     return SearchService;
 }());
 SearchService = __decorate([
