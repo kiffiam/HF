@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs/rx";
-import { Tvshow } from "../models/tvshow.type";
+import { Tvshow, TvShowCredits } from "../models/tvshow.type";
 import * as _ from "lodash";
 import { SearchResult } from "../models/search-result.type";
 import { HttpClient} from '@angular/common/http';
@@ -13,12 +13,6 @@ export class TvShowService {
     constructor(private http: HttpClient) {
     }
 
-    private tvshows: Tvshow[];
-
-    getTvShows(): any {
-        throw new Error("Method not implemented.");
-    }
-
     getTvShow(id: number): Observable<Tvshow> {
         let url = this.url + "/tv/" + id + this.apikey;
         return this.http.get<Tvshow>(url);
@@ -27,6 +21,11 @@ export class TvShowService {
     getTopTvShows(): Observable<SearchResult<Tvshow>> {
         let url = this.url +"/tv/top_rated" + this.apikey;
         return this.http.get<SearchResult<Tvshow>>(url);
+    }
+
+    getTvShowCredits(id:number):Observable<TvShowCredits>{
+        let url = this.url +"/tv/" + id + this.apikey;
+        return this.http.get<TvShowCredits>(url);
     }
 
 }

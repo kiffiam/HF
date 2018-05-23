@@ -19,12 +19,19 @@ var MoviePageComponent = (function () {
     }
     MoviePageComponent.prototype.ngOnInit = function () {
         this.getMovie();
+        this.getMovieCredits();
     };
     MoviePageComponent.prototype.getMovie = function () {
         var _this = this;
         var id = +this.route.snapshot.paramMap.get('id');
         var o = this.movieService.getMovie(id);
         o.subscribe(function (m) { return _this.movie = m; });
+    };
+    MoviePageComponent.prototype.getMovieCredits = function () {
+        var _this = this;
+        var id = +this.route.snapshot.paramMap.get('id');
+        var o = this.movieService.getMovieCredits(id);
+        o.subscribe(function (m) { return _this.movieCredits = m; });
     };
     return MoviePageComponent;
 }());

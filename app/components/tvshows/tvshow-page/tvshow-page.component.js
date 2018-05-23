@@ -26,6 +26,8 @@ var TvShowPageComponent = (function () {
         var o = this.TvShowService.getTvShow(id);
         o.subscribe(function (m) { return _this.tvshow = m; });
     };
+    TvShowPageComponent.prototype.getTvShowCredits = function () {
+    };
     return TvShowPageComponent;
 }());
 TvShowPageComponent = __decorate([

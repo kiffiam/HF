@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { Movie } from "../../../models/movie.type";
+import { Movie, MovieCredits } from "../../../models/movie.type";
 import { SearchResult } from "../../../models/search-result.type";
 import { MovieService } from "../../../services/movie.service";
 import { ActivatedRoute } from "@angular/router";
@@ -14,9 +14,11 @@ export class MoviePageComponent {
         private route: ActivatedRoute) { }
 
     movie: Movie;
+    movieCredits: MovieCredits;
 
     ngOnInit() {
         this.getMovie();
+        this.getMovieCredits();
     }
 
     getMovie(): void {
@@ -25,6 +27,11 @@ export class MoviePageComponent {
         o.subscribe(m => this.movie = m);
     }
 
+    getMovieCredits(): void{
+        const id = +this.route.snapshot.paramMap.get('id');
+        let o = this.movieService.getMovieCredits(id);
+        o.subscribe(m => this.movieCredits = m);
+    }
 
 
 }
