@@ -9,6 +9,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 @Injectable()
 export class SearchService {
     url = "https://api.themoviedb.org/3";
+    apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4'
 
     constructor(private http: HttpClient) {
 
@@ -20,8 +21,9 @@ export class SearchService {
         return this.http.get<Movie>(url);
     }
 
-    getSearchResult(){
-        
+    getSearchResult(query: string/*, page: number */): Observable<SearchResult<Movie>> {
+        let url = this.url +"/search/movie" + this.apikey + "&query=" + query;
+        return this.http.get<SearchResult<Movie>>(url);
     }
 
 }

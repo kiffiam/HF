@@ -15,12 +15,15 @@ var SearchService = (function () {
     function SearchService(http) {
         this.http = http;
         this.url = "https://api.themoviedb.org/3";
+        this.apikey = '?api_key=5de0f16390c3aa37bfd7a6f05e6b3fe4';
     }
     SearchService.prototype.getFightClub = function () {
         var url = "https://api.themoviedb.org/3/movie/550";
         return this.http.get(url);
     };
-    SearchService.prototype.getSearchResult = function () {
+    SearchService.prototype.getSearchResult = function (query /*, page: number */) {
+        var url = this.url + "/search/movie" + this.apikey + "&query=" + query;
+        return this.http.get(url);
     };
     return SearchService;
 }());
